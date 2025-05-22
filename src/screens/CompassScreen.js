@@ -41,7 +41,7 @@ const CompassScreen = () => {
                 textShadowColor: '#ff4d6d88',
                 textShadowOffset: { width: 0, height: 2 },
                 textShadowRadius: 6,
-                marginBottom: 50,
+                // marginBottom: 50,
                 alignSelf: 'center',}}>Compass</Text>
 
             <View style={styles.switchContainer}>
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#0d0d0d',
         alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingTop: 60,
+        paddingTop: 30,
     },
     title: {
         fontSize: 40,

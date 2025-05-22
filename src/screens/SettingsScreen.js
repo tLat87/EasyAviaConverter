@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Switch, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import {View, Text, Switch, StyleSheet, TouchableOpacity, Image, Linking} from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
 import {toggleVibration} from '../redux/slices/vibrationSlice';
 
@@ -34,7 +34,9 @@ const SettingsScreen = () => {
                 />
             </View>
 
-            <TouchableOpacity style={styles.termsButton}>
+            <TouchableOpacity style={styles.termsButton} onPress={()=>{
+                Linking.openURL('https://www.termsfeed.com/live/b13970c1-160c-4a92-aaa5-9a10d318102e');
+            }}>
                 <Text style={styles.termsText}>Terms of Use</Text>
             </TouchableOpacity>
 

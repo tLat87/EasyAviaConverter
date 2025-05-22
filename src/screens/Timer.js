@@ -138,8 +138,8 @@ const styles = StyleSheet.create({
     },
     circleGlow: {
         position: 'absolute',
-        width: 300,
-        height: 300,
+        width: '70%',
+        height: '70%',
         borderRadius: 150,
         backgroundColor: '#ff4d6d33',
         shadowColor: '#ff4d6d',

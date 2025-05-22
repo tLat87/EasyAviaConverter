@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import {Image, Text, TouchableOpacity, View} from 'react-native';
+import {Image, Platform, Text, TouchableOpacity, View} from 'react-native';
 import HomeScreen from '../screens/HomeScreen';
 
 import {useNavigation} from '@react-navigation/native';
@@ -41,17 +41,18 @@ const MainTabNavigator = () => {
                 headerShown: false,
                 tabBarStyle: {
                     position: 'absolute',
-                    bottom: 40,
+                    bottom: 20,
                     left: 20,
                     right: 20,
                     width: '90%',
                     marginLeft: '5%',
+                    paddingTop: Platform.OS === 'ios' ? '4%' : '0%',
                     backgroundColor: '#D60038',
                     borderRadius: 22,
                     paddingHorizontal: 1,
                     borderWidth: 3,
                     borderColor: '#282828',
-                    paddingTop: 20,
+                    // paddingTop: '5%',
                     shadowOffset: { width: 0, height: 10 },
                     shadowOpacity: 0.3,
                     shadowRadius: 10,

@@ -9,6 +9,7 @@ export default function NewLogEntryScreen({ navigation }) {
     const [date, setDate] = useState(new Date());
     const [title, setTitle] = useState('');
     const [note, setNote] = useState('');
+    const [showDatePicker, setShowDatePicker] = useState(false);
     const [photo, setPhoto] = useState(null);
     const dispatch = useDispatch();
 
@@ -34,9 +35,24 @@ export default function NewLogEntryScreen({ navigation }) {
             </TouchableOpacity>
 
             <Text style={styles.label}>Date</Text>
-            <View style={{backgroundColor: 'gray', borderRadius: 12}}>
-                <DateTimePicker value={date} mode="date" display="default" onChange={(e, selectedDate) => selectedDate && setDate(selectedDate)} />
-            </View>
+            <TouchableOpacity
+                style={{ backgroundColor: 'gray', borderRadius: 12, padding: 10 }}
+                onPress={() => setShowDatePicker(true)}
+            >
+                <Text style={{ color: '#fff' }}>{date.toDateString()}</Text>
+            </TouchableOpacity>
+
+            {showDatePicker && (
+                <DateTimePicker
+                    value={date}
+                    mode="date"
+                    display="default"
+                    onChange={(event, selectedDate) => {
+                        setShowDatePicker(false);
+                        if (selectedDate) setDate(selectedDate);
+                    }}
+                />
+            )}
 
             <Text style={styles.label}>Title</Text>
             <TextInput style={styles.input} value={title} onChangeText={setTitle} placeholder="Enter title" />
